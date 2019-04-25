@@ -50,3 +50,27 @@ console.log("");
 console.log(typeof String(Infinity));
 console.log(typeof String(NaN));
 console.log(typeof +"");
+
+console.log("");
+
+console.log(!!"");  // Любые !!, кроме этих пяти, вернут истину true
+console.log(!!NaN);
+console.log(!!0);
+console.log(!!null);
+console.log(!!undefined);
+
+console.log(!!"Hello");
+console.log(!!67);
+
+
+// parseInt и parseFloat
+
+console.log("");
+
+console.log(parseInt("4px"));
+console.log(parseFloat("4px"));
+
+console.log("");
+
+console.log(+true);
+console.log(+false);
