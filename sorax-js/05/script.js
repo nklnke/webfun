@@ -48,3 +48,5 @@ console.log(typeof number.toString());
 console.log("");
 
 console.log(typeof String(Infinity));
+console.log(typeof String(NaN));
+console.log(typeof +"");
