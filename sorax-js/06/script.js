@@ -35,10 +35,17 @@ console.log("");
 // switch case
 
 switch (name) {
-  case "Chlen": homecity = "Членляндия"; break;
-  case "Cokes": homecity = "Невьянск"; break;
-  case "Zhopa": homecity = "Жопляндия"; break;
-  default: homecity = "Ссангород";
+  case "Chlen":
+    homecity = "Членляндия";
+    break;
+  case "Cokes":
+    homecity = "Невьянск";
+    break;
+  case "Zhopa":
+    homecity = "Жопляндия";
+    break;
+  default:
+    homecity = "Ссангород";
 }
 
 console.log(homecity);
