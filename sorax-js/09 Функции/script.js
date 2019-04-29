@@ -7,7 +7,7 @@ function greed(name) {
   return "Hello " + name;
 }
 
-// идентификатор(аргументы) - вызываем то, что мы записали в функцию
+// выражение(аргументы) - вызываем то, что мы записали в функцию
 
 console.log(greed("cokes").toUpperCase());
 
@@ -31,4 +31,5 @@ var greed2 = function(name2) {
   console.log(arguments.length);
   return "Hello " + name2 + " 1";
 };
+
 console.log(greed2("cokes", 34, 23, 26).toUpperCase());
