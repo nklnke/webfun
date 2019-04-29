@@ -1,4 +1,4 @@
-// начал с цены 115р
+// начал с цены за пачку 115р
 // цены на https://www.tabacum.ru/info/cigarette/brand/WINSTON
 
 var lastTime = new Date("September 26, 2018"),
@@ -19,4 +19,4 @@ console.log("Сэкономил с учётом жыжы ~" + (savedMoney -
 
 console.log("Сэкономил с учётом жыжы и стартового дерьма ~" + (savedMoney -
             noSmokingTime / 30 * 500 - 2990 - 1990 - 390 * 2 -
-            100).toFixed(2));
+            100).toFixed(2)) + " руб.";
