@@ -14,7 +14,9 @@ var lastTime = new Date("September 26, 2018"),
 
 console.log("Не курю " + Math.round(noSmokingTime) + " дней");
 
-console.log("Экономия на сигах ~" + savedMoney.toFixed(2) + " руб.");
+console.log("Не выкурено сигарет ~" + Math.round(noSmokingTime * 20));
+
+console.log("Экономия только на сигах ~" + savedMoney.toFixed(2) + " руб.");
 
 console.log("Стартовые расходы ~" + startingCosts.toFixed(2) + " руб.");
 
@@ -23,7 +25,7 @@ console.log("Расходы на жыжу в месяц ~" + zhizhCosts + " ру
 console.log("Расходы на всякую поебень ~" + tempedCosts.toFixed(2));
 
 console.log(
-  "Сэкономил с учётом жыжы и всего остального дерьма ~" +
+  "Экономия общая ~" +
     (
       savedMoney -
       startingCosts -
