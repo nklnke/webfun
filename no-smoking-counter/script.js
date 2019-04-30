@@ -10,11 +10,11 @@ var lastTime = new Date("September 26, 2018"),
   startingCosts = 2990 + 1990 + 390 * 2 + 100,
   zhizhCosts = 500,
   tempedCosts = 650 + 200 + 270 + 690 + 200 + 200 + 250 + 250 + 100,
-  savedMoney = noSmokingTime * cigCost;
+  savedMoney = noSmokingTime * cigCost * 1.15; // Модификатор на 1.15 пачки в день
 
 console.log("Не курю " + Math.round(noSmokingTime) + " дней");
 
-console.log("Не выкурено сигарет ~" + Math.round(noSmokingTime * 20));
+console.log("Не выкурено сигарет ~" + Math.round(noSmokingTime * 20 * 1.15)); // Модификатор на 1.15 пачки в день
 
 console.log("Экономия только на сигах ~" + savedMoney.toFixed(2) + " руб.");
 
