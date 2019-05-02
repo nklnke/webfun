@@ -2,7 +2,7 @@
 // цены на https://www.tabacum.ru/info/cigarette/brand/WINSTON
 // закончил 107.25-143.00
 
-var lastTime = new Date("September 26, 2018"),
+let lastTime = new Date("September 26, 2018"),
   currentDate = new Date(),
   noSmokingTime =
     (currentDate.getTime() - lastTime.getTime()) / (1000 * 60 * 60 * 24),
