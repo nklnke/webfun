@@ -20,7 +20,8 @@ console.log(anotherPerson.greet.call(person, "Hi"));
 console.log(anotherPerson.greet.call(person, "Bonjour"));
 console.log(anotherPerson.greet.apply(person, ["Bonjour"])); // То же самое, что call
 
-var bound = greet.bind(anotherPerson); // Метод bound не вызывает функцию, а прост освязывает её с каким-то объектом
+var bound = greet.bind(anotherPerson);
+// Метод bound не вызывает функцию, а просто связывает её с каким-то объектом,
 // чтобы, когда она вызывается, ключевое слово this указывало на тот объект,
 // с которым она была связана
 console.log(bound("Hello there"));
