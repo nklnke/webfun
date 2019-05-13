@@ -19,31 +19,34 @@ function update() {
         zhizhCosts * (noSmokingTime / 30)) /
       noSmokingTime;
 
-  console.log("");
-  console.log("Не курю " + Math.round(noSmokingTime) + " дней");
-  console.log("Не выкурено сигарет ~" + Math.round(noSmokingTime * 20 * 1.25)); // Модификатор на 1.15 пачки в день
-  console.log("Экономия только на сигах ~" + savedMoney.toFixed(2) + " руб.");
-  console.log("Стартовые расходы ~" + startingCosts.toFixed(2) + " руб.");
-  console.log("Расходы на жыжу в месяц ~" + zhizhCosts + " руб./мес.");
-  console.log("Расходы на всякую поебень ~" + tempedCosts.toFixed(2) + " руб.");
-  console.log(
-    "Экономия общая ~" +
-      (
-        savedMoney -
-        startingCosts -
-        tempedCosts -
-        zhizhCosts * (noSmokingTime / 30)
-      ).toFixed(2) +
-      " руб."
+  document.getElementById("noSmokingTime").innerHTML = Math.round(
+    noSmokingTime
   );
-  console.log("Экономия в день ~" + daySavings.toFixed(2) + " руб.");
-  console.log("Экономия в час ~" + (daySavings / 24).toFixed(2) + " руб.");
-  console.log(
-    "Экономия в минуту ~" + (daySavings / (24 * 60)).toFixed(2) + " руб."
+  document.getElementById("numberOfCigs").innerHTML = Math.round(
+    noSmokingTime * 20 * 1.25
+  ); // Модификатор на 1.15 пачки в день
+  document.getElementById("savedMoney").innerHTML = savedMoney.toFixed(2);
+  document.getElementById("startingCosts").innerHTML = startingCosts.toFixed(2);
+  document.getElementById("zhizhCosts").innerHTML = zhizhCosts;
+  document.getElementById("tempedCosts").innerHTML = tempedCosts.toFixed(2);
+  document.getElementById("economy").innerHTML = (
+    savedMoney -
+    startingCosts -
+    tempedCosts -
+    zhizhCosts * (noSmokingTime / 30)
+  ).toFixed(2);
+  document.getElementById("daySavings").innerHTML = daySavings.toFixed(2);
+  document.getElementById("hourSavings").innerHTML = (daySavings / 24).toFixed(
+    2
   );
-  console.log(
-    "Экономия в секунду ~" + (daySavings / (24 * 60 * 60)).toFixed(5) + " руб."
-  );
+  document.getElementById("minuteSavings").innerHTML = (
+    daySavings /
+    (24 * 60)
+  ).toFixed(3);
+  document.getElementById("secondSavings").innerHTML = (
+    daySavings /
+    (24 * 60 * 60)
+  ).toFixed(5);
 }
 
 function start() {
