@@ -9,12 +9,14 @@ function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 550,
-    height: 610,
+    height: 585,
     webPreferences: {
       nodeIntegration: true
     },
     resizable: false
   });
+
+  mainWindow.setMenuBarVisibility(false); // !!!!!!!!!!!!
 
   // and load the index.html of the app.
   mainWindow.loadFile("index.html");
