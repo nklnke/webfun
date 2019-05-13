@@ -1,20 +1,20 @@
 ## https://canonium.com/articles/electron-desktop-app-introduction
 
-- $ npm i -g electron-packager
+``` $ npm i -g electron-packager ```
 
 
-- Просто создадим новый скрипт build в package.json с таким содержанием:
+- Cкрипт build в package.json:
 
-...
+```
   "scripts": {
     "start": "xo && electron .",
     "test": "xo",
     "build": "electron-packager . myApp --platform=win32 --arch=x64 --version=0.33.3 --app-version=0.1.0 --out=dist --ignore=dist --prune"
   },
-...
+```
 
 
-- $ npm run build
+``` $ npm run build ```
 
 
 ## Могут быть проблемы с .git - лучше удалить электроновский
