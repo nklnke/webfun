@@ -26,9 +26,9 @@ function update() {
     noSmokingTime * 20 * 1.25
   ); // Модификатор на 1.15 пачки в день
   document.getElementById("savedMoney").innerHTML = savedMoney.toFixed(2);
-  document.getElementById("startingCosts").innerHTML = startingCosts.toFixed(2);
+  document.getElementById("startingCosts").innerHTML = startingCosts;
   document.getElementById("zhizhCosts").innerHTML = zhizhCosts;
-  document.getElementById("tempedCosts").innerHTML = tempedCosts.toFixed(2);
+  document.getElementById("tempedCosts").innerHTML = tempedCosts;
   document.getElementById("economy").innerHTML = (
     savedMoney -
     startingCosts -
