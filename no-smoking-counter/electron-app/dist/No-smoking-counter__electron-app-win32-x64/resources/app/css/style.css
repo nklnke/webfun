@@ -13,4 +13,6 @@ td:hover {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
+  color: #000;
+  background-color: #fff;
 }
