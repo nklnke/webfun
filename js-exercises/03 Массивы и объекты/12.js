@@ -4,7 +4,7 @@ var mass = {
     ru: ["пн", "вт", "ср", "чт", "пт", "сб", "вс"],
     en: ["pn", "vt", "sr", "cht", "pt", "sb", "vs"]
   },
-  day = prompt("Номер дня недели", "1-7");
+  day = prompt("Номер дня недели", "0-6"), // prompt нужно спрашивать только через html
   lang = prompt("Язык", "ru или en");
 
 console.log(mass[lang][day]);
