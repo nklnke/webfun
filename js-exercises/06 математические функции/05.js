@@ -7,4 +7,4 @@ for (let i = 0; i < mass.length; i++) {
   sum += Math.pow(mass[i], 3);
 }
 
-console.log(sum);
+console.log(Math.sqrt(sum));
