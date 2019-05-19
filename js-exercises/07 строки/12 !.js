@@ -2,7 +2,6 @@
 
 // Изменить строку в js нельзя, поэтому нужно создать новую на основе имеющейся
 
-var stroke = "первую букву строки в верхний регистр",
-  newStroke = stroke[0].toUpperCase() + stroke.slice(1);
+var stroke = "первую букву строки в верхний регистр";
 
-console.log(newStroke);
+console.log(stroke[0].toUpperCase() + stroke.slice(1));
