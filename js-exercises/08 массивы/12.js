@@ -3,9 +3,7 @@
 var mass = [1, 2, 3, 4, 5];
 
 mass.splice(1, 0, "a", "b");
+mass.splice(6, 0, "c");
+mass.splice(8, 0, "e");
 
 console.log(mass);
-
-mass2 = mass.splice(3, 0, "c");
-
-console.log(mass2);
