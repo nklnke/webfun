@@ -1,7 +1,7 @@
 // Сделайте функцию, которая возвращает квадрат числа. Число передается параметром.
 
-function cube($num) {
-  console.log($num * $num);
+function cube(num) {
+  console.log(num * num);
 }
 
 cube(7);
