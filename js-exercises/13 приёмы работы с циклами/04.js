@@ -11,7 +11,6 @@ var stroke = "";
 for (let i = 0; i <= 40; i++) {
   stroke += "x";
   document.write(stroke + "<br>");
-  // но в консоли такое вроде не сделать (м.б. через \n)
 }
 
 console.log(stroke);
