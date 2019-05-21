@@ -10,7 +10,7 @@ var stroke = "";
 
 for (let i = 0; i <= 40; i++) {
   stroke += "x";
-  // тут должен быть перенос строки, типа "document.write(stroke + "<br>");
+  document.write(stroke + "<br>");
   // но в консоли такое вроде не сделать (м.б. через \n)
 }
 
