@@ -12,5 +12,3 @@ for (let i = 0; i <= 40; i++) {
   stroke += "x";
   document.write(stroke + "<br>");
 }
-
-console.log(stroke);
