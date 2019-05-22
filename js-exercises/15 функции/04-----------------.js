@@ -6,14 +6,14 @@ var sum = 0,
   years = [];
 
 function getDigitsSum(num) {
-  var string = String(num);
+  let string = String(num);
   for (let i = 0; i < string.length; i++) {
     sum += Number(string[i]);
   }
   console.log(sum);
 }
 
-for (let i = 0; i <= 2017; i++) {
+for (let i = 0; i <= 2019; i++) {
   if (getDigitsSum(i) == 13) {
     years.push(i);
   }
