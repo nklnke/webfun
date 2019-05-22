@@ -5,7 +5,8 @@
 // параметром будет принимать число и возвращать true,
 // если число положительное, и false - если отрицательное.
 
-var arr = [1, 2, 3, -1, -2, -3];
+var arr = [1, 2, 3, -1, -2, -3],
+  newArr = [];
 
 function isPositive(num) {
   if (num >= 0) {
@@ -15,7 +16,6 @@ function isPositive(num) {
   }
 }
 
-var newArr = [];
 for (var i = 0; i <= arr.length; i++) {
   if (isPositive(arr[i])) {
     newArr.push(arr[i]);
