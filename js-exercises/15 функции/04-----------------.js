@@ -13,12 +13,26 @@ function getDigitsSum(num) {
   console.log(sum);
 }
 
-for (let i = 0; i <= 2019; i++) {
-  if (getDigitsSum(i) == 13) {
-    years.push(i);
-  }
-}
+//for (let j = 0; j <= 2019; j++) {
+//  if (getDigitsSum(j) == 13) {
+//    years.push(j);
+//  }
+//}
 
 console.log(years);
 
+getDigitsSum(2018);
 getDigitsSum(2017);
+getDigitsSum(2017);
+getDigitsSum(2017);
+getDigitsSum(2019);
+getDigitsSum(2017);
+getDigitsSum(2017);
+getDigitsSum(2017);
+getDigitsSum(2017);
+getDigitsSum(2017);
+getDigitsSum(2017);
+
+// Короче, проблема в том, похоже, что i продолжает увеличиваться.
+// И почему-то прибавляется к ней по 10, а не по 1.
+// По ходу надо без цикла функцию переделать.
