@@ -1,0 +1,18 @@
+Повторите поведение кнопки по нажатию на нее (она осуществляет обмен содержимым между двумя инпутами, можете понажимать
+на нее несколько раз или вручную сменить содержимое инпутов):<br>
+
+<button onclick="buttonClick()">click</button>
+<input type="text" name="" id="input1" value="value1">
+<input type="text" name="" id="input2" value="value2">
+
+<script>
+  function buttonClick() {
+    var input1 = document.getElementById("input1"),
+      input2 = document.getElementById("input2"),
+      input1text = input1.value,
+      input2text = input2.value;
+
+    input1.value = input2text;
+    input2.value = input1text;
+  }
+</script>

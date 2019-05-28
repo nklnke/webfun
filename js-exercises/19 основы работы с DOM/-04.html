@@ -1,0 +1,13 @@
+Повторите поведение кнопки по нажатию на нее (она выводит алертом содержимое инпута, возведенное в квадрат):<br>
+
+<button onclick="buttonClick()">Нажми на меня</button>
+<input type="text" id="input" placeholder="Введите число!">
+
+<script>
+  function buttonClick() {
+    var input = document.getElementById('input');
+    var number = Number(input.value);
+    var square = Math.pow(number, 2);
+    alert(square);
+  }
+</script>
