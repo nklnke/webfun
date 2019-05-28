@@ -1,9 +1,9 @@
 onresize = function() {
   var bodyWidth = document.documentElement.clientWidth,
     bodyHeight = document.documentElement.clientHeight,
-    scalable = document.getElementByClassName("scalable"); // .getElementById("scalable")
+    scalable = document.getElementsByClassName("scalable")[0]; // .getElementById("scalable")
 
-  scale = Math.min(bodyWidth / 700, bodyHeight / 500);
+  scale = Math.min(bodyWidth / 700, bodyHeight / 700);
 
   scalable.style.top = (bodyHeight - scalable.offsetHeight * scale) / 2 + "px";
   scalable.style.left = (bodyWidth - scalable.offsetWidth * scale) / 2 + "px";
@@ -11,5 +11,3 @@ onresize = function() {
 };
 
 onresize();
-
-// Меняю выборку с "по ID" на "по классу" - и всё к хуям
