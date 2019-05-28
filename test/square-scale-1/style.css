@@ -1,7 +1,7 @@
 .outer {
-  position: relative;
   width: 640px;
   height: 480px;
   background: url("http://placekitten.com/640/480") no-repeat center center;
-  -webkit-transform-origin: top left;
+  display: flex;
+  justify-content: center;
 }
