@@ -1,0 +1,19 @@
+Повторите поведение кнопок по нажатию на них (одна из них блокирует инпут с помощью атрибута disabled, а другая
+разблокирует):<br>
+
+<button onclick="block()">block</button>
+<button onclick="unBlock()">unblock</button>
+
+<input type="text" name="" id="text" value="some shiet">
+
+<script>
+  function block() {
+    var input = document.getElementById("text");
+    input.disabled = true;
+  }
+
+  function unBlock() {
+    var input = document.getElementById("text");
+    input.disabled = false;
+  }
+</script>
