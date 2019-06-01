@@ -2,4 +2,4 @@
 
 ## Tasks taken from:
 
-' http://code.mu/tasks/javascript/base/osnovy-yazyka-javascript-dlya-novichkov.html
+http://code.mu/tasks/javascript/base/osnovy-yazyka-javascript-dlya-novichkov.html
