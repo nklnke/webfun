@@ -1,0 +1,21 @@
+Повторите страницу по данному по образцу: <br />
+
+<img
+  src="https://code.mu/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/3/6/1.jpg"
+  alt=""
+  srcset=""
+  onmouseover="changeImg(this)"
+  onmouseout="returnImg(this)"
+/>
+
+<script>
+  function changeImg(element) {
+    element.src =
+      "https://code.mu/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/3/6/2.jpg";
+  }
+
+  function returnImg(element) {
+    element.src =
+      "https://code.mu/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/3/6/1.jpg";
+  }
+</script>
