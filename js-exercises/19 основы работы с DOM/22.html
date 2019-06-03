@@ -1,0 +1,14 @@
+Повторите страницу по данному по образцу: <br />
+По нажатию на кнопку в нижнем инпуте появится квадрат числа из верхнего инпута.
+<input type="text" name="" id="input1" value="VVEDI SHTRUAF" />
+<input type="text" name="" id="input2" disabled />
+<button onclick="square()">click</button>
+
+<script>
+  function square() {
+    var num = document.getElementById("input1"),
+      res = document.getElementById("input2");
+
+    res.value = Math.pow(Number(num), 2);
+  }
+</script>
