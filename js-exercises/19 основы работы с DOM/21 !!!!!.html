@@ -1,0 +1,21 @@
+Повторите страницу по данному по образцу: <br />
+
+<input type="text" name="" id="input1" value="sika" />
+<input type="text" name="" id="input2" value="kaka" />
+<button onclick="switchInputs()">click</button>
+
+<script>
+  function switchInputs() {
+    var inp1 = document.getElementById("input1"),
+      inp2 = document.getElementById("input2"),
+      thirdVar = inp1.value;
+
+    // Здесь нужно вводить третью переменную, потому что
+    // следующая строка перезаписывает inp1 навсегда, и дальше
+    // всё идёт по пизде. А копирование в новую переменную - это
+    // некая задержка на один шаг
+
+    inp1.value = inp2.value;
+    inp2.value = thirdVar;
+  }
+</script>
