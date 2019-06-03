@@ -1,0 +1,14 @@
+Повторите страницу по данному по образцу: <br />
+
+<input type="text" name="" id="input" style="float: left;" />
+<button onclick="floatChange()" style="float: right;" id="button">click</button>
+
+<script>
+  function floatChange() {
+    var input = document.getElementById("input"),
+      button = document.getElementById("button");
+
+    input.style.float = "right";
+    button.style.float = "left";
+  }
+</script>

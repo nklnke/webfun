@@ -1,0 +1,21 @@
+Повторите страницу по данному по образцу: <br />
+
+<input type="submit" value="disable" id="inputSubmit1" onclick="func1()" />
+<input type="submit" value="undisable" id="inputSubmit2" onclick="func2()" />
+
+<script>
+  var element1 = document.getElementById("inputSubmit1"),
+    element2 = document.getElementById("inputSubmit2");
+
+  element2.style.display = "none";
+
+  function func1() {
+    element1.disabled = true;
+    element2.style.display = "block";
+  }
+
+  function func2() {
+    element1.disabled = false;
+    element2.style.display = "none";
+  }
+</script>
