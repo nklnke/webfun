@@ -1,3 +1,28 @@
-Повторите поведение кнопки по нажатию на нее:<br>
+Дан HTML код (см. под задачей). Поменяйте содержимое элементов с классом zzz на
+их порядковый номер в коде.
 
-<button onclick="alert('Привет!')">Нажми на меня</button>
+<h2 class="zzz">Заголовок с классом zzz.</h2>
+<p class="zzz">Абзац с классом zzz.</p>
+<p class="zzz">Абзац с классом zzz.</p>
+<p>Просто абзац, не поменяется.</p>
+
+<br />
+
+Решение: создадим кнопку, по нажатию на которую будет вызываться функция func,
+которая выполнит указанные в условии задачи действия: <br />
+
+<input type="submit" onclick="func()" />
+
+<br /><br />
+
+Получим теперь элементы по имени класса и переберем их циклом, используя метод
+getElementsByClassName:
+
+<script>
+  function func() {
+    var elems = document.getElementsByClassName("zzz");
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].innerHTML = i + 1;
+    }
+  }
+</script>
