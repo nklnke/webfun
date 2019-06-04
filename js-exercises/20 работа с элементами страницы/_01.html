@@ -1,3 +1,11 @@
-Повторите поведение кнопки по нажатию на нее:<br>
+Повторите поведение кнопки по нажатию на нее (она меняет текст в span): <br />
 
-<button onclick="alert('Привет!')">Нажми на меня</button>
+<button onclick="buttonClick()">Нажми на меня</button>
+<span id="elem">Это span с текстом.</span>
+
+<script>
+  function buttonClick() {
+    var elem = document.getElementById("elem");
+    elem.innerHTML = "!!!";
+  }
+</script>

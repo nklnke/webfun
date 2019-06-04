@@ -1,3 +1,18 @@
-Повторите поведение кнопки по нажатию на нее:<br>
+Дан HTML код (см. под задачей). Поменяйте содержимое абзацев на их порядковый
+номер в коде.
 
-<button onclick="alert('Привет!')">Нажми на меня</button>
+<h2>Заголовок, не поменяется.</h2>
+<p>Абзац, поменяется.</p>
+<p>Абзац, поменяется.</p>
+<p>Абзац, поменяется.</p>
+
+<input type="submit" onclick="func()" />
+
+<script>
+  function func() {
+    var elems = document.getElementsByTagName("p");
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].innerHTML = i + 1;
+    }
+  }
+</script>
