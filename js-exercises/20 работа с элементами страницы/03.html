@@ -1,0 +1,12 @@
+Повторите страницу по данному по образцу: <br />
+
+<p id="text">SASAI</p>
+
+<button onclick="change()">click</button>
+
+<script>
+  function change() {
+    var paragraph = document.getElementById("text");
+    paragraph.outerHTML = "<h3>" + paragraph.innerHTML + "</h3>";
+  }
+</script>
