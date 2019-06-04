@@ -1,0 +1,28 @@
+Повторите страницу по данному по образцу: <br />
+
+<input type="text" name="" id="result" /><br />
+
+<input type="submit" onclick="calc('-')" value="-" />
+<input type="submit" onclick="calc('+')" value="+" />
+<input type="submit" onclick="calc('*')" value="*" />
+<input type="submit" onclick="calc('/')" value="/" />
+
+<br />
+
+<input type="submit" onclick="calc('1')" value="1" />
+<input type="submit" onclick="calc('2')" value="2" />
+<input type="submit" onclick="calc('3')" value="3" />
+<input type="submit" onclick="calc('4')" value="4" />
+<input type="submit" onclick="calc('5')" value="5" />
+<input type="submit" onclick="calc('6')" value="6" />
+<input type="submit" onclick="calc('7')" value="7" />
+<input type="submit" onclick="calc('8')" value="8" />
+<input type="submit" onclick="calc('9')" value="9" />
+<input type="submit" onclick="calc('0')" value="0" />
+
+<script>
+  function calc(value) {
+    var result = document.getElementById("result");
+    result.value += value;
+  }
+</script>

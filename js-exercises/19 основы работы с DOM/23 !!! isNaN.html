@@ -1,0 +1,22 @@
+Повторите страницу по данному по образцу: <br />
+
+По нажатию на кнопку в нижнем инпуте появится квадрат числа из верхнего инпута.
+Если введено не число - должна показаться ошибка. <br />
+
+<input type="text" name="" id="number" value="VVEDI SHTRUAF" />
+<input type="text" name="" id="result" value="resultshtruaf" disabled />
+
+<button onclick="calc()">click</button>
+
+<script>
+  function calc() {
+    var num = document.getElementById("number").value,
+      res = document.getElementById("result");
+
+    if (!isNaN(num)) {
+      res.value = Math.pow(num, 2);
+    } else {
+      alert("VVEDEN NEVERNIY SHTRUAF");
+    }
+  }
+</script>
