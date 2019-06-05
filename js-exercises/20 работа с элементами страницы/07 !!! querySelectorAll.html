@@ -1,8 +1,8 @@
 Дан HTML код (см. под задачей). <br />
-Поменяйте содержимое элементов с классом www на их порядковый номер в коде.
-<br />
+Поменяйте содержимое <b>абзацев</b> с классом www на их порядковый номер в коде. <br />
 
-<h2 class="www">Заголовок с классом www.</h2>
+<h2 class="www">Заголовок с классом www, не поменяется.</h2>
+<p class="www">Абзац с классом www.</p>
 <p class="www">Абзац с классом www.</p>
 <p class="www">Абзац с классом www.</p>
 <p>Просто абзац, не поменяется.</p>
@@ -11,7 +11,7 @@
 
 <script>
   function change() {
-    var elem = document.getElementsByClassName("www");
+    var elem = document.querySelectorAll("p.www");
 
     for (let i = 0; i < elem.length; i++) {
       elem[i].innerHTML = i + 1;

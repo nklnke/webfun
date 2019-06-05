@@ -1,0 +1,17 @@
+Повторите страницу по данному по образцу: <br />
+
+<p id="my-ass" class="my-huyass">Абзац с class="my-class".</p>
+
+<button onclick="getClass()">click</button>
+
+<script>
+  function getClass() {
+    var elem = document.getElementById("my-ass");
+    alert(
+      "ID - " +
+        elem.getAttribute("id") +
+        ". Class - " +
+        elem.getAttribute("class")
+    );
+  }
+</script>
