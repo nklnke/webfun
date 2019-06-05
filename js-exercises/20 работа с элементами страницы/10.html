@@ -1,0 +1,29 @@
+<style>
+  .my-ass {
+    color: red;
+  }
+</style>
+
+Повторите страницу по данному по образцу: <br />
+
+<p class="my-ass ass" id="paragraph">
+  Абзац с class="my-class class". Класс "my-class" задает красный цвет.
+</p>
+
+<button onclick="showClass()">show class</button>
+<button onclick="changeClass()">
+  change class to "new-ass" (click show to check)
+</button>
+
+<script>
+  var elem = document.getElementById("paragraph");
+
+  function showClass() {
+    alert(elem.getAttribute("class"));
+  }
+
+  function changeClass() {
+    elem.setAttribute("class", "new-ass"); // "какой аттрибут меняем", "на что меняем"
+    alert("!");
+  }
+</script>
