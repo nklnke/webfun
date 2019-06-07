@@ -1,0 +1,23 @@
+Создайте <b>таймер</b> от 0 до бесконечности: <br />
+
+<p id="shi">0</p>
+
+<button onclick="start()">click</button>
+
+<script>
+  var i = 0;
+
+  function counter() {
+    var result = document.getElementById("shi");
+
+    i++;
+
+    result.innerHTML = i;
+  }
+
+  function start() {
+    setInterval(counter, 1000);
+    // counter(); Это чтобы сработало сразу, а не через секунду.
+    // В данном случае не нужно, но вообще нормальная хорошая штука
+  }
+</script>
