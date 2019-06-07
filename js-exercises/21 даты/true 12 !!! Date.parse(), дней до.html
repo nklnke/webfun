@@ -1,0 +1,38 @@
+<script>
+  function daysLeft() {
+    var month = parseInt(prompt("enter month (format: M)")),
+      day = parseInt(prompt("enter day"));
+
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    var nextDate = new Date([today.getFullYear(), month, day].join(","));
+    if (nextDate < today) {
+      nextDate.setFullYear(today.getFullYear() + 1);
+    }
+
+    msPerDay = 24 * 60 * 60 * 1000;
+    daysLeft = Math.round((nextDate.getTime() - today.getTime()) / msPerDay);
+    dayname = "";
+    ds = "" + daysLeft;
+
+    dd = parseInt(ds.substr(ds.length - 1));
+
+    if (daysLeft > 4 && daysLeft < 21) dayname = " dnei";
+    else if (dd == 1) dayname = " den";
+    else if (dd == 2 || dd == 3 || dd == 4) dayname = " dnya";
+    else dayname = " dnei";
+
+    if (daysLeft == 0) {
+      console.log("Happy Bday!");
+    } else {
+      if (daysLeft == 1) {
+        console.log("Zavtra u vas prazdnik!");
+      } else {
+        console.log("do vashego DR ostalos " + daysLeft + dayname + "!");
+      }
+    }
+  }
+
+  daysLeft();
+</script>

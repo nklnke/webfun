@@ -1,18 +1,28 @@
 Создайте инпут, в который пользователь вводит дату своего рождения в формате
-'2014-12-31' (с конкретным годом). По потери фокуса выведите под инпутом сколько
-дней осталось до его дня рождения. Воспользуйтесь методом Date.parse. <br />
+'2014-12-31' (с конкретным годом). По потери фокуса выведите под инпутом,
+сколько дней прошло со дня его рождения. Воспользуйтесь методом Date.parse.
+<br />
 
-<!-- год не важен, нужно знать месяц и день, создать дату с этими данными в этом году,
+<!-- год не важен, нужно знать месяц и день,
+создать дату с этими данными в этом году,
 сравнить с текущей датой, если она меньше текущей, прибавить год и вычесть
 текущую. -->
 
-<input type="text" onkeyup="func(this)" />
-<span id="output"></span>
+<input
+  type="text"
+  onkeyup="birth(this)"
+  value="2014-12-31"
+  placeholder="формат 2014-12-31"
+/>
+<p id="output"></p>
 
 <script>
-  function func(elem) {
-    var output = document.getElementById("output");
+  function birth(elem) {
+    var output = document.getElementById("output"),
+      birthDate = Date.parse(elem.value),
+      now = new Date(),
+      result = (now.getTime() - birthDate) / (100 * 60 * 60 * 24);
 
-    output.innerHTML = elem.value;
+    console.log(result);
   }
 </script>
