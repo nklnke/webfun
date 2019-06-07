@@ -2,8 +2,7 @@
 // Создайте для этого вспомогательную функцию showDay,
 // которая параметром принимает число, а возвращает день недели по-русски.
 
-var currentDate = new Date(),
-  currentDay = currentDate.getDay();
+var currentDate = new Date();
 
 function showDay(num) {
   var days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
@@ -13,7 +12,7 @@ function showDay(num) {
   //   return days[num];
   // }
 
-  return days[nums];
+  return days[num];
 }
 
-console.log(showDay(currentDay));
+console.log(showDay(currentDate.getDay()));
