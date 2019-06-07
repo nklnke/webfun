@@ -1,0 +1,20 @@
+Повторите страницу по данному по образцу (при нажатии на кнопку текст в каждом
+абзаце поменяется - спереди добавится порядковый номер абзаца): <br />
+
+<p>sika kaka piska sraka</p>
+<p>sika kaka piska sraka</p>
+<p>sika kaka piska sraka</p>
+<p>sika kaka piska sraka</p>
+<p>sika kaka piska sraka</p>
+
+<button onclick="changeToNumbers()">click</button>
+
+<script>
+  function changeToNumbers() {
+    var elem = document.getElementsByTagName("p");
+
+    for (let i = 0; i < elem.length; i++) {
+      elem[i].innerHTML = i + ". " + elem[i].innerHTML;
+    }
+  }
+</script>
