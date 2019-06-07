@@ -1,37 +1,13 @@
-<!-- Повторите страницу по данному по образцу: <br />
+Повторите страницу по данному по образцу: <br />
 
-<input
-  type="text"
-  id="input"
-  value=""
-  placeholder="shi ett"
-  onkeyup="output(this)"
-/>
+<input type="text" value="" placeholder="shi ett" onkeyup="output(this)" />
 
 <p id="output"></p>
 
 <script>
   function output(text) {
-    var input = document.getElementById("input"),
-      output;
+    var output = document.getElementById("output");
 
     output.innerHTML = text.value;
   }
-</script> -->
-
-
-<script>
-  function go(elem) {
-    var text = document.getElementById("text");
-    text.innerHTML = elem.value;
-  }
 </script>
-
-<input
-  type="text"
-  value=""
-  placeholder="Введи в меня текст!"
-  id="test"
-  onkeyup="go(this)"
-/>
-<span id="text"></span>

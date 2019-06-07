@@ -1,0 +1,26 @@
+Повторите страницу по данному по образцу (по ссылкам не переходите, нажмите на
+кнопку): <br />
+
+<style>
+  a {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+  }
+</style>
+
+<a href="shiet.ru">link1</a>
+<a href="shiet.com">link2</a>
+<a href="shiet.net">link3</a>
+
+<button onclick="showHref()">click</button>
+
+<script>
+  function showHref() {
+    var elem = document.getElementsByTagName("a");
+
+    for (let i = 0; i < elem.length; i++) {
+      elem[i].innerHTML += elem[i].getAttribute("href") + " ";
+    }
+  }
+</script>
