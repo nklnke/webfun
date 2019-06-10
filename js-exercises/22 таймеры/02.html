@@ -1,0 +1,36 @@
+Создайте отсчет с кнопкой остановки: <br />
+
+<p id="timer">0</p>
+
+<button onclick="start()" id="startButton">start</button>
+<button onclick="stop()" id="stopButton" disabled>stop</button>
+
+<script>
+  function timer() {
+    var i = 0,
+      timer = document.getElementById("timer");
+
+    i++;
+    timer.innerHTML = i;
+  }
+
+  // Или:
+  // function timer() {
+  //   var timer = document.getElementById("timer");
+  //   timer.innerHTML = parseInt(timer.innerHTML) + 1;
+  // }
+
+  function start() {
+    window.timerId = window.setInterval(timer, 1000);
+
+    document.getElementById("startButton").disabled = true;
+    document.getElementById("stopButton").disabled = false;
+  }
+
+  function stop() {
+    window.clearInterval(window.timerId);
+
+    document.getElementById("startButton").disabled = false;
+    document.getElementById("stopButton").disabled = true;
+  }
+</script>
