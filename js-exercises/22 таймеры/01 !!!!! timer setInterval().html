@@ -5,13 +5,11 @@
 <button onclick="start()">click</button>
 
 <script>
-  var i = 0;
+  var i = 0,
+    result = document.getElementById("shi");
 
   function counter() {
-    var result = document.getElementById("shi");
-
     i++;
-
     result.innerHTML = i;
   }
 
