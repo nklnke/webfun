@@ -1,6 +1,6 @@
 Создайте отсчет с кнопкой остановки: <br />
 
-<p id="timer">0</p>
+<p id="result">0</p>
 
 <button onclick="start()" id="startButton">start</button>
 <button onclick="stop()" id="stopButton" disabled>stop</button>
@@ -8,20 +8,20 @@
 <script>
   function timer() {
     var i = 0,
-      timer = document.getElementById("timer");
+      result = document.getElementById("result");
 
     i++;
-    timer.innerHTML = i;
+    result.innerHTML = i;
   }
 
   // Или:
   // function timer() {
-  //   var timer = document.getElementById("timer");
-  //   timer.innerHTML = parseInt(timer.innerHTML) + 1;
+  //   var result = document.getElementById("result");
+  //   result.innerHTML = parseInt(result.innerHTML) + 1;
   // }
 
   function start() {
-    window.timerId = window.setInterval(timer, 1000);
+    window.timerId = window.setInterval(timer, 500);
 
     document.getElementById("startButton").disabled = true;
     document.getElementById("stopButton").disabled = false;
