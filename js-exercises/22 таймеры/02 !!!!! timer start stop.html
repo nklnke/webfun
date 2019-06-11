@@ -23,14 +23,14 @@
   // }
 
   function start() {
-    window.timerId = window.setInterval(timer, 1);
+    timerId = setInterval(timer, 1);
 
     document.getElementById("startButton").disabled = true;
     document.getElementById("stopButton").disabled = false;
   }
 
   function stop() {
-    window.clearInterval(window.timerId);
+    clearInterval(timerId);
 
     document.getElementById("startButton").disabled = false;
     document.getElementById("stopButton").disabled = true;
