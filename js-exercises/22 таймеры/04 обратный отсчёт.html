@@ -1,13 +1,14 @@
 Создайте таймер обратного отсчета: <br />
 
 <p id="countdown">10</p>
-<button onclick="start()">click</button>
+<button onclick="start()" id="button">click</button>
 
 <script>
   var result = document.getElementById("countdown");
 
   function start() {
-    setInterval(countdown, 500);
+    interval = setInterval(countdown, 250);
+    document.getElementById("button").disabled = true;
   }
 
   function countdown() {
@@ -15,6 +16,7 @@
 
     if (parseInt(result.innerHTML) == 0) {
       result.innerHTML = "SHTRUAF";
+      clearInterval(interval);
     }
   }
 </script>

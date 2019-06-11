@@ -1,0 +1,30 @@
+<body onload="start()">
+  Создайте тикающие часики: <br />
+
+  <p id="clock"></p>
+
+  <script>
+    function zero(num) {
+      if (num <= 9) {
+        return "0" + num;
+      } else return num;
+    }
+
+    function clock() {
+      var result = document.getElementById("clock"),
+        time = new Date();
+
+      result.innerHTML =
+        zero(time.getHours()) +
+        ":" +
+        zero(time.getMinutes()) +
+        ":" +
+        zero(time.getSeconds());
+    }
+
+    function start() {
+      setInterval(clock, 1000);
+      clock();
+    }
+  </script>
+</body>
