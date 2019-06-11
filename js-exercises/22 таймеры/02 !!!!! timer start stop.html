@@ -6,10 +6,12 @@
 <button onclick="stop()" id="stopButton" disabled>stop</button>
 
 <script>
-  function timer() {
-    var i = 0,
-      result = document.getElementById("result");
+  // Переменную всегда объявлять вне функции,
+  // иначе по завершению функции она уничтожается
+  var i = 0,
+    result = document.getElementById("result");
 
+  function timer() {
     i++;
     result.innerHTML = i;
   }
@@ -21,7 +23,7 @@
   // }
 
   function start() {
-    window.timerId = window.setInterval(timer, 500);
+    window.timerId = window.setInterval(timer, 1);
 
     document.getElementById("startButton").disabled = true;
     document.getElementById("stopButton").disabled = false;
