@@ -21,10 +21,14 @@ console.log(options);
 
 console.log("");
 
-for (let key in options) {
-  console.log("Свойство " + key + " имеет значение " + options[key]);
+for (let i in options) {
+  console.log("Свойство " + i + " имеет значение " + options[i]);
 }
 
 console.log("");
 
 console.log(Object.keys(options).length);
+
+console.log("");
+
+console.log(options);
