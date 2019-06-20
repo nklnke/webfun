@@ -1,7 +1,0 @@
-.outer {
-  width: 640px;
-  height: 480px;
-  background: url("http://placekitten.com/640/480") no-repeat center center;
-  display: flex;
-  justify-content: center;
-}
