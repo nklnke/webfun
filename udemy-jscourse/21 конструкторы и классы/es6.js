@@ -8,11 +8,11 @@ class User {
 
   // Методы класса
   hello() {
-    console.log("hello, ${this.name}");
+    console.log(`hello, ${this.name}`);
   }
 
   exit() {
-    console.log("user ${this.name} вышел");
+    console.log(`user ${this.name} вышел`);
   }
 }
 
