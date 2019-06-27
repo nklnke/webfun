@@ -1,8 +1,8 @@
 // Функции-конструкторы предназначены для
-// создания объектов и множества подобных копий.
+// создания однотипных объектов (пользователи, товары, ролики, ...).
 // return в них указывать не нужно.
 
-function User(name, id) { //
+function User(name, id) {
   this.name = name;
   this.id = id;
   this.human = true;
@@ -10,6 +10,11 @@ function User(name, id) { //
     console.log("sasai, " + this.name);
   };
 }
+
+// Создание своего метода у функции
+User.prototype.exit = function(name) {
+  console.log("user " + this.name + " вышел");
+};
 
 let ivan = new User("Ivan", 25),
   alex = new User("Alex", 367);
@@ -20,4 +25,5 @@ console.log(alex);
 ivan.hello();
 alex.hello();
 
-// 5:20
+ivan.exit();
+alex.exit();
