@@ -1,21 +1,29 @@
-// let, const
-// Spread/Rest
-// `${let}`
-// ()=>{}
-// Promise
-// Деструктуризация
-// for...of
-// Class
+// Переменные, созданные let или const,
+// видны лишь в блоке, ограниченном {}.
 
-// Интерполяция - более простой способ вставить
-// переменную/выражение.
+// Они создаются только тогда, когда до них
+// дошла очередь.
 
-let name = "ivan",
-  age = 30,
-  mail = "mail@mail.ru";
+// В цикле для каждой итерации
+// создаётся своя переменная.
 
-console.log("Пользователю " + name + " " + age + " лет. Его почта - " + mail);
+function makeArray() {
+  var items = [];
 
-// vs
+  for (var i = 0; i < 10; i++) {
+  // for (let i = 0; i < 10; i++) {
+    var item = function() {
+      console.log(i);
+    };
+    items.push(item);
+  }
 
-console.log(`Пользователю ${name} ${age} лет. Его почта - ${mail}`);
+  return items;
+}
+
+var arr = makeArray();
+
+arr[0]();
+arr[1]();
+arr[2]();
+arr[3]();
