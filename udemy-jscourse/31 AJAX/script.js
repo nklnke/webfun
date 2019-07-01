@@ -3,10 +3,10 @@
 // За счет этого уменьшается время отклика и
 // веб-приложение по интерактивности больше напоминает десктоп.
 
-let inpurRub = document.getElementById("rub"),
-  inpurUsd = document.getElementById("usd");
+let inputRub = document.getElementById("rub"),
+  inputUsd = document.getElementById("usd");
 
-inpurRub.addEventListener("input", () => {
+inputRub.addEventListener("input", () => {
   let request = new XMLHttpRequest();
 
   // request.open(method, url, async, login, pass);
@@ -25,3 +25,5 @@ inpurRub.addEventListener("input", () => {
     /**true стоит и так, login/pass не нужны */
   );
 });
+
+// 10:04
