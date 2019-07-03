@@ -7,6 +7,29 @@
     <title>Document</title>
   </head>
   <body>
+    <form method="post" action="/login/">
+      <table>
+        <tr>
+          <td>login</td>
+          <td><input id="login" type="text" name="login" /></td>
+        </tr>
+        <tr>
+          <td>pass</td>
+          <td><input id="password" type="password" name="password" /></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="remember-me" /> remember</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="login" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <button id="change">change form</button>
+
     <script src="script.js"></script>
   </body>
 </html>
