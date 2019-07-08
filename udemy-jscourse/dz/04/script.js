@@ -84,7 +84,10 @@ let appData = {
 
   // Доп. доходы
   chooseIncome: function() {
-    let items = prompt("Что принесёт дополнительный доход? (через запятую)", "");
+    let items = prompt(
+      "Что принесёт дополнительный доход? (через запятую)",
+      ""
+    );
 
     appData.income = items.split(", ");
     appData.income.push(prompt("Что-то ещё?"));
