@@ -1,0 +1,23 @@
+<body onload="start()">
+  Создайте простой слайдер: <br />
+
+  <img id="image" />
+
+  <script>
+    function start() {
+      timer = setInterval(slideShow, 1000);
+      slideShow();
+    }
+
+    function slideShow() {
+      var image = document.getElementById("image");
+
+      if (window.number == undefined || window.number == 2) {
+        // картинки от 1.jpg до x.jpg (2 в данном случае)
+        window.number = 1;
+      } else window.number++;
+
+      image.src = window.number + ".jpg";
+    }
+  </script>
+</body>
