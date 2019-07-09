@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body onload="start()">
+  Создайте отсчет до полуночи.
+  <p>До полуночи осталось:</p>
+
+  <span id="hours"></span>
+  :
+  <span id="minutes"></span>
+  :
+  <span id="seconds"></span>
+
+  <script>
+    function start() {
+      timer = setInterval(midnightCounter, 1000);
+      midnightCounter();
+    }
+
+    function midnightCounter() {
+      var hours = document.getElementById("hours"),
+        minutes = document.getElementById("minutes"),
+        seconds = document.getElementById("seconds");
+
+      var now = new Date(),
+        midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+
+      var difference = Math.floor((midnight - now) / 1000); // Разница в секундах
+
+      var hoursRemain = Math.floor(difference / (60 * 60)),
+        minutesRemain = Math.floor((difference - hoursRemain * 60 * 60) / 60),
+        secondsRemain = Math.floor(difference % 60);
+
+      hours.innerHTML = hoursRemain;
+      minutes.innerHTML = zero(minutesRemain);
+      seconds.innerHTML = zero(secondsRemain);
+    }
+
+    function zero(num) {
+      if (num <= 9) {
+        return "0" + num;
+      } else {
+        return num;
+      }
+    }
+  </script>
+</body>
+
+</html>
