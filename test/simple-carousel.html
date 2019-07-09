@@ -1,24 +1,42 @@
 <body>
   <img id="image1" src="1.jpg" height="100px">
   <img id="image2" src="2.jpg" height="100px">
+  <img id="image3" src="3.jpg" height="100px">
+
+  <br>
 
   <button id="start">start</button>
+  <button id="stop">stop</button>
 
   <script>
-    let btn = document.getElementById("start");
+    let btnStart = document.getElementById("start"),
+      btnStop = document.getElementById("stop");
 
-    btn.addEventListener("click", function() {
+    btnStop.disabled = true;
+
+    btnStart.addEventListener("click", function() {
       timer = setInterval(carousel, 1000);
-      carousel();
+
+      btnStart.disabled = true;
+      btnStop.disabled = false;
     });
+
+    btnStop.addEventListener("click", function() {
+      clearInterval(timer);
+
+      btnStart.disabled = false;
+      btnStop.disabled = true;
+    })
 
     function carousel() {
       var img1 = document.getElementById("image1"),
         img2 = document.getElementById("image2"),
+        img3 = document.getElementById("image3"),
         tmp = img1.src;
 
       img1.src = img2.src;
-      img2.src = tmp;
+      img2.src = img3.src;
+      img3.src = tmp;
     }
   </script>
 </body>
