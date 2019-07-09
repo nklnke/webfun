@@ -1,11 +1,11 @@
 <body onload="start()">
   Создайте простой слайдер: <br />
 
-  <img src="1.jpg" id="image" />
+  <img id="image" />
 
   <script>
     function start() {
-      timer = setInterval(slideShow, 500);
+      timer = setInterval(slideShow, 1000);
       slideShow();
     }
 
@@ -15,7 +15,7 @@
       if (window.number == undefined || window.number == 2) {
         // картинки от 1.jpg до x.jpg (2 в данном случае)
         window.number = 1;
-      } else window.number = window.number + 1;
+      } else window.number++;
 
       image.src = window.number + ".jpg";
     }
