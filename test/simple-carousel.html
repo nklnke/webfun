@@ -1,0 +1,24 @@
+<body>
+  <img id="image1" src="1.jpg" height="100px">
+  <img id="image2" src="2.jpg" height="100px">
+
+  <button id="start">start</button>
+
+  <script>
+    let btn = document.getElementById("start");
+
+    btn.addEventListener("click", function() {
+      timer = setInterval(carousel, 1000);
+      carousel();
+    });
+
+    function carousel() {
+      var img1 = document.getElementById("image1"),
+        img2 = document.getElementById("image2"),
+        tmp = img1.src;
+
+      img1.src = img2.src;
+      img2.src = tmp;
+    }
+  </script>
+</body>
