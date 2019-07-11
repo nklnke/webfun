@@ -1,0 +1,6 @@
+.active {
+  font-size: 30px;
+  color: red;
+  background-color: black;
+  transition: 0.2s;
+}
