@@ -1,23 +1,75 @@
 let startBtn = document.getElementById("start"),
-  budgetValue = document.getElementsById("budget-value"[0]),
-  dayBudgetValue = document.getElementsById("daybudget-value")[0],
+  budgetValue = document.getElementsByClassName("budget-value")[0],
+  dayBudgetValue = document.getElementsByClassName("daybudget-value")[0],
   levelValue = document.getElementsByClassName("level-value")[0],
-  
+  expensesValue = document.getElementsByClassName("expences-value")[0],
+  optionalExpensesValue = document.getElementsByClassName(
+    "optionalexpences-value"
+  )[0],
+  incomeValue = document.getElementsByClassName("income-value")[0],
+  monthSavingsValue = document.getElementsByClassName("monthsavings-value")[0],
+  yearSavingsValue = document.getElementsByClassName("yearsavings-value")[0],
+  expensesItem = document.getElementsByClassName("expenses-item"),
+  expensesBtn = document.getElementsByTagName("button")[0],
+  optionalExpensesBtn = document.getElementsByTagName("button")[1],
+  countBtn = document.getElementsByTagName("button")[2],
+  optionalExpensesItem = document.querySelectorAll(".optionalexpenses-item"),
+  incomeItem = document.querySelectorAll(".choose-income"),
+  checkSavings = document.querySelector("#savings"),
+  sumValue = document.querySelector(".choose-sum"),
+  percentValue = document.querySelector(".choose-percent"),
+  yearValue = document.querySelector(".year-value"),
+  monthValue = document.querySelector(".month-value"),
+  dayValue = document.querySelector(".day-value");
 
 let money, time;
 
-function start() {
-  money = +prompt("Ваш бюджет на месяц", ""); // Унарный + в начале - чтобы строка преобразовывалась в число
+startBtn.addEventListener("click", function() {
   time = prompt("Введите дату в формате YYYY-MM-DD", "");
+  money = +prompt("Ваш бюджет на месяц", ""); // Унарный + в начале - чтобы строка преобразовывалась в число
 
   // Проверка на то, что пользователь вводит числа
   // До тех пор, пока не будут введены числа, диалог будет повторяться
   while (isNaN(money) || money == "" || money == null) {
     money = +prompt("Ваш бюджет на месяц", "");
   }
-}
 
-start();
+  appData.budget = money;
+  appData.timeData = time;
+
+  budgetValue.textContent = money.toFixed(); // Доход
+  yearValue.value = new Date(Date.parse(time)).getFullYear();
+  monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
+  dayValue.value = new Date(Date.parse(time)).getDate();
+});
+
+// Обязательные расходы
+expensesBtn.addEventListener("click", function() {
+  let sum = 0;
+
+  for (i = 0; i < expensesItem.length; i++) {
+    let a = expensesItem[i].value,
+      b = expensesItem[++i].value; // or ++i
+
+    if (
+      typeof a === "string" && // Проверка на то, что а - строка
+      typeof a != null && // Проверка на то, что а и б не пустые
+      typeof b != null &&
+      a != "" &&
+      b != "" &&
+      a.length < 50 // Прооверка на то, что длина а < 50 символов
+    ) {
+      console.log("Всё верно");
+      appData.expenses[a] = b; // Запись в expences вида "ответ на a : ответ на b"
+
+      sum += +b;
+    } else {
+      i = i - 1;
+    }
+  }
+
+  expensesValue.textContent = sum;
+});
 
 let appData = {
   budget: money,
@@ -26,28 +78,6 @@ let appData = {
   optionalExpenses: {},
   income: [],
   savings: true,
-
-  // Метод для объекта appData
-  chooseExpenses: function() {
-    for (i = 0; i < 2; i++) {
-      let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
-        b = prompt("Во сколько обойдется?", "");
-
-      if (
-        typeof a === "string" && // Проверка на то, что а - строка
-        typeof a != null && // Проверка на то, что а и б не пустые
-        typeof b != null &&
-        a != "" &&
-        b != "" &&
-        a.length < 50 // Прооверка на то, что длина а < 50 символов
-      ) {
-        console.log("Всё верно");
-        appData.expenses[a] = b; // Запись в expences вида "ответ на a : ответ на b"
-      } else {
-        i--;
-      }
-    }
-  },
 
   // Бюджет на день
   detectDayBudget: function() {
@@ -90,10 +120,15 @@ let appData = {
 
   // Доп. доходы
   chooseIncome: function() {
-    let items = prompt("Что принесёт дополнительный доход? (через запятую)", "");
+    let items = prompt(
+      "Что принесёт дополнительный доход? (через запятую)",
+      ""
+    );
 
     appData.income = items.split(", ");
     appData.income.push(prompt("Что-то ещё?"));
     appData.income.sort(); // Сортировка по алфавиту
   }
 };
+
+// 19:10
