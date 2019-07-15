@@ -91,6 +91,7 @@ let appData = {
 
     appData.income = items.split(", ");
     appData.income.push(prompt("Что-то ещё?"));
+
     appData.income.sort(); // Сортировка по алфавиту
   }
 };
