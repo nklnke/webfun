@@ -2,9 +2,9 @@ let startBtn = document.getElementById("start"),
   budgetValue = document.getElementsByClassName("budget-value")[0],
   dayBudgetValue = document.getElementsByClassName("daybudget-value")[0],
   levelValue = document.getElementsByClassName("level-value")[0],
-  expensesValue = document.getElementsByClassName("expences-value")[0],
+  expensesValue = document.getElementsByClassName("expenses-value")[0],
   optionalExpensesValue = document.getElementsByClassName(
-    "optionalexpences-value"
+    "optionalexpenses-value"
   )[0],
   incomeValue = document.getElementsByClassName("income-value")[0],
   monthSavingsValue = document.getElementsByClassName("monthsavings-value")[0],
@@ -49,7 +49,7 @@ expensesBtn.addEventListener("click", function() {
 
   for (i = 0; i < expensesItem.length; i++) {
     let a = expensesItem[i].value,
-      b = expensesItem[++i].value; // or ++i
+      b = expensesItem[++i].value;
 
     if (
       typeof a === "string" && // Проверка на то, что а - строка
@@ -59,12 +59,11 @@ expensesBtn.addEventListener("click", function() {
       b != "" &&
       a.length < 50 // Прооверка на то, что длина а < 50 символов
     ) {
-      console.log("Всё верно");
-      appData.expenses[a] = b; // Запись в expences вида "ответ на a : ответ на b"
+      appData.expenses[a] = b; // Запись в expenses вида "ответ на a : ответ на b"
 
       sum += +b;
     } else {
-      i = i - 1;
+      i = i--;
     }
   }
 
