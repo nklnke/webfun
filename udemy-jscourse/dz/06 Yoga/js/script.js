@@ -45,4 +45,30 @@ window.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
+
+  // Timer
+  let deadline = "2019-10-21";
+
+  // Функция, определяющая остаток времени до дедлайна
+  function getTimeRemaining(endTime) {
+    let t = Date.parse(endtime) - Date.parse(new Date()), // Сюда записывается разница в датах в мсекундах
+      seconds = Math.floor((t / 1000) % 60),
+      minutes = Math.floor((t / (1000 * 60)) % 60),
+      hours = Math.floor(t / (100 * 60 * 60));
+    // days = Math.floor((t / (1000 * 60 * 60)) % 24);
+
+    return {
+      total: t,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds
+    };
+  }
+
+  // Функция, записывающая показания в документ
+  function setClock(id, endTime) {
+    
+  }
 });
+
+// 13:00
