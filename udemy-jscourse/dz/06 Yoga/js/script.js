@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 
   // Timer deadline
-  let deadline = "2019-08-21";
+  let deadline = "2019-07-19";
 
   // Функция "16:9:4 -> 16:09:04"
   function zero(num) {
@@ -91,10 +91,15 @@ window.addEventListener("DOMContentLoaded", function() {
       minutes.textContent = zero(t.minutes);
       seconds.textContent = zero(t.seconds);
 
+      // Остановка таймера
       if (t.total <= 0) {
         clearInterval(timeInterval);
+
+        hours.textContent = minutes.textContent = seconds.textContent = 0;
       }
     }
+
+    updateClock(); // Запускаем таймер сразу же, не ждём 1 секунду
   }
 
   setClock("timer", deadline); // timer - id таймера в документе
