@@ -1,4 +1,5 @@
-// window.addEventListener("load", ...) // Скрипт начнёт выполняться после того, как загрузится абсолютно всё
+// window.addEventListener("load", ...)
+// Скрипт начнёт выполняться после того, как загрузится абсолютно всё
 
 window.addEventListener("DOMContentLoaded", function() {
   // Скрипт начнёт выполняться сразу после загрудки дерева DOM, не дожидаясь, например, прогрузки картинок
@@ -20,7 +21,8 @@ window.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  hideTabContent(1); // Скрываются все табы, кроме первого (0 - первый, 1 - второй, ...)
+  hideTabContent(1); // Скрываются все табы, начиная с a+1 из hideTabContent(a)
+  // В данном случае (1) скрываются все, кроме первого таба (0 - первый, 1 - второй, ...)
 
   // Функция, показывающая таб-контент
   function showTabContent(b) {
@@ -111,7 +113,7 @@ window.addEventListener("DOMContentLoaded", function() {
     overlay = document.querySelector(".overlay"),
     close = document.querySelector(".popup-close");
 
-  // event listenerы на кнопки "Узнать больше" в табах и далее по странице
+  // event listenerы на кнопки "Узнать больше" в табах под таймером
   descriptionBtn.addEventListener("click", function() {
     overlay.style.display = "block";
     this.classList.add("more-splash"); // Анимация кнопки
