@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 
   // Timer deadline
-  let deadline = "2019-07-19";
+  let deadline = "2020-07-19";
 
   // Функция "16:9:4 -> 16:09:04"
   function zero(num) {
@@ -109,19 +109,22 @@ window.addEventListener("DOMContentLoaded", function() {
 
   // Modal window
   let more = document.querySelector(".more"),
-    descriptionBtn = document.querySelector(".description-btn"),
+    descriptionBtn = document.querySelectorAll(".description-btn"),
     overlay = document.querySelector(".overlay"),
     close = document.querySelector(".popup-close");
 
-  // event listenerы на кнопки "Узнать больше" в табах под таймером
-  descriptionBtn.addEventListener("click", function() {
-    overlay.style.display = "block";
-    this.classList.add("more-splash"); // Анимация кнопки
+  // event listenerы на кнопки "Узнать больше" в табах
+  for (let i = 0; i < descriptionBtn.length; i++) {
+    descriptionBtn[i].addEventListener("click", function() {
+      overlay.style.display = "block";
+      this.classList.add("more-splash"); // Анимация кнопки
 
-    // Запрет прокрутки страницы при открытом модальном окне
-    document.body.style.overflow = "hidden";
-  });
+      // Запрет прокрутки страницы при открытом модальном окне
+      document.body.style.overflow = "hidden";
+    });
+  }
 
+  // listener на кнопку под таймером
   more.addEventListener("click", function() {
     overlay.style.display = "block";
     this.classList.add("more-splash"); // Анимация кнопки
@@ -130,6 +133,7 @@ window.addEventListener("DOMContentLoaded", function() {
     document.body.style.overflow = "hidden";
   });
 
+  // modal close button
   close.addEventListener("click", function() {
     overlay.style.display = "none";
     more.classList.remove("more-splash"); // Анимация кнопки
