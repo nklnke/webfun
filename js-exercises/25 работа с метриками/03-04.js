@@ -13,3 +13,8 @@ btn1.addEventListener("click", function() {
 btn2.addEventListener("click", function() {
   alert(`offsetHeight ${elem.offsetHeight}`);
 });
+
+for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+  
+}
