@@ -26,15 +26,39 @@ function Greetings3(props) {
   );
 }
 
-// Встраивание в страницу блока с id root
+// Hello World 4
+const element = <Greetings4 phrase="SASAI LALKA" />;
+
+function Greetings4(props) {
+  return <h3>{props.phrase}.</h3>;
+}
+
+// Hello World 5
+function GreetAll() {
+  return (
+    <div>
+      <hr />
+      <Greetings4 phrase="SASAI LALKA" />
+      <Greetings4 phrase="LALKA SASAI" />
+      <Greetings4 phrase="SASAI HUYALKA" />
+      <Greetings4 phrase="HUYALKA SASAI" />
+    </div>
+  );
+}
+
+// Встраивание в страницу блока с id = root, huyt, ...
 ReactDOM.render(<Greetings1 />, document.getElementById("root"));
 ReactDOM.render(<Greetings2 />, document.getElementById("huyt"));
 ReactDOM.render(
   <Greetings3 name="Kokes" anotherName="Sasaer" />,
   document.getElementById("third")
 );
+ReactDOM.render(element, document.getElementById("sasailalka"));
+ReactDOM.render(<GreetAll />, document.getElementById("GreetAll"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+// 17:10
