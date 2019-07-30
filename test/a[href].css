@@ -1,0 +1,11 @@
+a {
+  color: gray;
+}
+
+a[href="http://google.com"] {
+  color: blue;
+}
+
+a[href="http://yandex.ru"] {
+  color: red;
+}
