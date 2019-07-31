@@ -31,3 +31,37 @@
     transform: rotate(360deg);
   }
 }
+
+.wrapper {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  text-align: center;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.rest-block {
+  height: 80px;
+  line-height: 80px;
+  background-color: #f67;
+  font-size: 24px;
+  color: #fff;
+}
+
+.work-block {
+  height: 80px;
+  line-height: 80px;
+  background-color: #a9f;
+  font-size: 24px;
+  color: #fe7;
+}
+
+.clicker {
+  width: 170px;
+  border-radius: 8px;
+  height: 40px;
+  margin-top: 30px;
+  outline: none;
+}
