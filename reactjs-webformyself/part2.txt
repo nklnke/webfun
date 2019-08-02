@@ -1,0 +1,4 @@
+1	jsx-syntax	start
+2	js-syntax	ограничения
+3	js-syntax	inline-styles
+4	create simple component
