@@ -1,17 +1,18 @@
 import React from "react";
 
+// 1)
 // function Car() {
 //   return (
 //     <h2>This is hui component</h2>
 //   )
 // }
 
-// Проще в ES6:
+// 2) Проще в ES6:
 // const car = () => {
 //   return <h2>This is hui component</h2>;
 // };
 
-// Ещё проще:
+// 3) Ещё проще (без фигурных скобок сразу получается return):
 // const car = () => <h2>This is hui component</h2>;
 
 // const car = () => (
@@ -23,7 +24,7 @@ import React from "react";
 
 // export default car;
 
-// Суперпросто:
+// 4) Суперпросто:
 export default () => (
   <div>
     This is hui component <br />
