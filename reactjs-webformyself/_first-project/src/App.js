@@ -3,22 +3,18 @@ import "./App.css";
 import Car from "./Car/Car";
 
 function App() {
-  // Можно возвращать только один корневой элемент
   const divStyle = {
     textAlign: "center"
   };
 
+  // Можно возвращать только один корневой элемент
   return (
     <div style={divStyle}>
       <h1>Cars</h1>
 
-      <Car name={"Ford"} year={2018}>
-        <p style={{ color: "blue" }}>Color</p>
-      </Car>
+      <Car name={"Ford"} year={2018} />
 
-      <Car name="Audi" year={3551}>
-        <p style={{ color: "red" }}>Color</p>
-      </Car>
+      <Car name="Audi" year={3551} />
 
       <Car name={"Herauyord"} year={1989} />
     </div>
