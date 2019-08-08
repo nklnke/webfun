@@ -2,4 +2,4 @@
 
 let accessAllowed = (age > 18) ? true : false; // js
 
-{isLoggedIn ? null : loginBox} // react
+{isLoggedIn ? welcomeBox : loginBox} // react
