@@ -1,17 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-// При импорте не обязательно указывать расширение .js
 import AppHeader from "./components/app-header";
 import SearchPanel from "./components/search-panel";
 import TodoList from "./components/todo-list";
 
 const App = () => {
+  const todoData = [
+    { label: "Drink Coffee", important: false },
+    { label: "Make app", important: true },
+    { label: "Sasai", important: false }
+  ];
+
   return (
     <div>
       <AppHeader />
       <SearchPanel />
-      <TodoList />
+      <TodoList todos={todoData} />
     </div>
   );
 };
