@@ -34,6 +34,7 @@ onLabelClick = () => {
 };
 
 // Без деструктуризации:
+
 onLabelClick = () => {
   this.setState((state) => {
     return {
@@ -42,10 +43,23 @@ onLabelClick = () => {
   });
 };
 
-//
+// simple example
 
 this.setState((state) => {
   return {
     count: state.count + 1
   }
 });
+
+// Удаление элемента из массива:
+
+// (setState() не должен изменять текущий state, нельзя ипользовать
+// методы, которые изменяют (mutate) текущий массив)
+
+// Получаем индекс удаляемого элемента, ищем элемент с таким же
+// id, какой получили при онклике по itemу
+
+const index = todoData.findIndex((el) => el.id === id);
+
+newArr = [...oldArr.slice(0, index),
+		  ...oldArr.slice(index + 1)];
