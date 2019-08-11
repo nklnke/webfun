@@ -71,11 +71,7 @@ export default class App extends Component {
     const newItem = { ...oldItem, [propName]: !oldItem[propName] };
 
     // Новый массив: item вырезан, вместо него newItem
-    return [
-      ...arr.slice(0, index),
-      newItem,
-      ...arr.slice(index + 1)
-    ];
+    return [...arr.slice(0, index), newItem, ...arr.slice(index + 1)];
   }
 
   onToggleDone = id => {
@@ -85,7 +81,7 @@ export default class App extends Component {
       };
     });
   };
-  
+
   onToggleImportant = id => {
     this.setState(({ todoData }) => {
       return {
@@ -94,13 +90,11 @@ export default class App extends Component {
     });
   };
 
-
-
   render() {
     const { todoData } = this.state;
 
     // Счётчик заданий (фильтр, который оставляет элементы, у которых done: true)
-    const doneCount = todoData.filter((el) => el.done).length,
+    const doneCount = todoData.filter(el => el.done).length,
       todoCount = todoData.length - doneCount;
 
     return (
