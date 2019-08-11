@@ -5,45 +5,55 @@ import "./todo-list-item.css";
 export default class TodoListItem extends Component {
   // Внутреннее состояние компонента хранится в поле state
   state = {
-    done: false
+    done: false,
+    important: false
   };
 
-  // event listener через class fields:
+  // В функции получаем текущий стейт (деструктурируя сразу же,
+  // не !state.important, а { important })
+  // и возвращаем обратный ему
   onLabelClick = () => {
-    this.setState({
-      done: true
+    this.setState(({ done }) => {
+      return {
+        done: !done
+      };
+    });
+  };
+
+  onMarkImportant = () => {
+    this.setState(({ important }) => {
+      return {
+        important: !important
+      };
     });
   };
 
   render() {
     // У класса пропсы не принимаются, а хранятся в this.props
-    const { label, important = false } = this.props;
-    const { done } = this.state;
+    const { label } = this.props;
+    const { done, important } = this.state;
 
     let classNames = "todo-list-item";
 
     if (done) {
+      // Следить за пробелом перед классом, иначе будет class="importantdone"
       classNames += " done";
     }
 
-    const style = {
-      color: important ? "steelblue" : "black",
-      fontWeight: important ? "bold" : "normal"
-    };
+    if (important) {
+      classNames += " important";
+    }
 
     return (
       <span className={classNames}>
-        <span
-          className="todo-list-item-label"
-          style={style}
-          onClick={this.onLabelClick}
-        >
+        <span className="todo-list-item-label" onClick={this.onLabelClick}>
           {label}
         </span>
 
         <button
           type="button"
           className="btn btn-outline-success btn-sm float-right"
+          onClick={this.onMarkImportant}
         >
           <i className="fa fa-exclamation" />
         </button>
