@@ -9,6 +9,8 @@ export default class TodoListItem extends Component {
     important: false
   };
 
+
+  // Item-done function
   // В функции получаем текущий стейт (деструктурируя сразу же,
   // не !state.important, а { important })
   // и возвращаем обратный ему
@@ -20,6 +22,7 @@ export default class TodoListItem extends Component {
     });
   };
 
+  // Item-important function
   onMarkImportant = () => {
     this.setState(({ important }) => {
       return {
@@ -30,7 +33,7 @@ export default class TodoListItem extends Component {
 
   render() {
     // У класса пропсы не принимаются, а хранятся в this.props
-    const { label } = this.props;
+    const { label, onDelete } = this.props;
     const { done, important } = this.state;
 
     let classNames = "todo-list-item";
@@ -61,6 +64,7 @@ export default class TodoListItem extends Component {
         <button
           type="button"
           className="btn btn-outline-danger btn-sm float-right"
+          onClick={onDelete}
         >
           <i className="fa fa-trash-o" />
         </button>
