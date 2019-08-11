@@ -16,7 +16,8 @@ export default class App extends Component {
       this.createTodoItem("Drink coffee"),
       this.createTodoItem("Make app"),
       this.createTodoItem("Sasai")
-    ]
+    ],
+    searchStroke: "fe"
   };
 
   createTodoItem(label) {
@@ -90,11 +91,23 @@ export default class App extends Component {
     });
   };
 
+  search(items, searchStroke) {
+    if (searchStroke.length === 0) {
+      return items;
+    }
+
+    items.filter((item) => {
+      return item.label.indexOf(searchStroke) > -1;
+    });
+  }
+
   render() {
-    const { todoData } = this.state;
+    const { todoData, searchStroke } = this.state;
+    
+    const visibleItems = this.search(todoData, searchStroke);
 
     // Счётчик заданий (фильтр, который оставляет элементы, у которых done: true)
-    const doneCount = todoData.filter(el => el.done).length,
+    const doneCount = todoData.filter((el) => el.done).length,
       todoCount = todoData.length - doneCount;
 
     return (

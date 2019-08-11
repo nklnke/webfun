@@ -14,6 +14,7 @@ const SearchPanel = () => {
       style={searchStyle}
       type="text"
       placeholder={searchText}
+      //onChange={}
     />
   );
 };
