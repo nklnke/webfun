@@ -17,7 +17,7 @@ export default class App extends Component {
       this.createTodoItem("Make app"),
       this.createTodoItem("Sasai")
     ],
-    searchStroke: "fe"
+    searchStroke: ""
   };
 
   createTodoItem(label) {
@@ -96,30 +96,39 @@ export default class App extends Component {
       return items;
     }
 
-    items.filter((item) => {
-      return item.label.indexOf(searchStroke) > -1;
+    // Функция вернёт элементы, label которых содержит searchStroke
+    return items.filter(item => {
+      // indexOf вернёт 0 или больше, если строка есть, и -1, если её нет
+      return item.label
+        .toLowerCase()
+        .indexOf(searchStroke.toLowerCase()) > -1;
     });
   }
 
+  onSearchChange = searchStroke => {
+    this.setState({ searchStroke });
+  };
+
   render() {
     const { todoData, searchStroke } = this.state;
-    
+
     const visibleItems = this.search(todoData, searchStroke);
 
     // Счётчик заданий (фильтр, который оставляет элементы, у которых done: true)
-    const doneCount = todoData.filter((el) => el.done).length,
+    const doneCount = todoData.filter(el => el.done).length,
       todoCount = todoData.length - doneCount;
 
     return (
       <div className="todo-app">
         <AppHeader toDo={todoCount} done={doneCount} />
         <div className="top-panel d-flex">
-          <SearchPanel />
+          <SearchPanel onSearchChange={this.onSearchChange} />
           <ItemStatusFilter />
         </div>
 
         <TodoList
-          todos={todoData}
+          // Передаём не все элементы, а только те, которые видимы (поиск, фильтры)
+          todos={visibleItems}
           onDeleted={this.deleteItem}
           onToggleImportant={this.onToggleImportant}
           onToggleDone={this.onToggleDone}
