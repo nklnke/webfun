@@ -17,7 +17,8 @@ export default class App extends Component {
       this.createTodoItem("Make app"),
       this.createTodoItem("Sasai")
     ],
-    searchStroke: ""
+    searchStroke: "",
+    filter: 'all' // active, all или done
   };
 
   createTodoItem(label) {
@@ -109,10 +110,33 @@ export default class App extends Component {
     this.setState({ searchStroke });
   };
 
-  render() {
-    const { todoData, searchStroke } = this.state;
+  filter(items, filter) {
+    switch(filter) {
+      case "all":
+        return items;
 
-    const visibleItems = this.search(todoData, searchStroke);
+      case "active":
+        // Фильтр возвращает те элементы, которые не выполнены (!item.done)
+        return items.filter(item => !item.done);
+
+      case "done":
+        return items.filter(item => item.done);
+
+      default:
+        return items;
+    }
+  }
+
+  onFilterChange = filter => {
+    this.setState({ filter });
+  };
+
+  render() {
+    // Достаём значения из state
+    const { todoData, searchStroke, filter } = this.state;
+
+    const visibleItems = this.filter(
+      this.search(todoData, searchStroke), filter);
 
     // Счётчик заданий (фильтр, который оставляет элементы, у которых done: true)
     const doneCount = todoData.filter(el => el.done).length,
@@ -121,9 +145,14 @@ export default class App extends Component {
     return (
       <div className="todo-app">
         <AppHeader toDo={todoCount} done={doneCount} />
+
         <div className="top-panel d-flex">
           <SearchPanel onSearchChange={this.onSearchChange} />
-          <ItemStatusFilter />
+
+          {/* App передаёт ItemStstusFilter, какой элемент должен быть активен */}
+          <ItemStatusFilter
+            filter={filter}
+            onFilterChange={this.onFilterChange} />
         </div>
 
         <TodoList
