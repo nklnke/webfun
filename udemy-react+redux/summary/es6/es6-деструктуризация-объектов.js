@@ -9,10 +9,7 @@ const person = {
   role: "admin"
 };
 
-const {
-  name: { first: firstName, last: lastName },
-  age
-} = person;
+const { name: { first: firstName, last: lastName }, age } = person;
 
 console.log(firstName, lastName, age);
 
