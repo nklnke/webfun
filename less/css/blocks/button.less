@@ -1,0 +1,51 @@
+// main: ../style.less
+
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.5em 1em;
+  margin: 0.5rem;
+
+  background-color: #ccc;
+  border-radius: @radius;
+
+  font-family: inherit;
+  font-size: 1rem;
+  color: @white;
+  text-decoration: none;
+
+  transition: background 0.2s linear;
+
+  span {
+    color: @black;
+  }
+
+  // $ + $ нужны, когда несколько элементов идут подряд
+  & + & {
+    margin-left: 1rem;
+  }
+
+  // Если .btn идёт после .disabled
+  .disabled & {
+    background-color: red;
+    cursor: not-allowed;
+  }
+
+  // Амперсанд добавляет к классу родителя
+  // Получится btn--primary
+  &--primary {
+    background-color: @primary;
+    &:hover,
+    &:focus {
+      background-color: lighten(@primary, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: @secondary;
+    &:hover,
+    &:focus {
+      background-color: darken(@secondary, 10%);
+    }
+  }
+}
