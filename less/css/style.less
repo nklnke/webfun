@@ -1,7 +1,10 @@
-// compress: false
+// compress: false, sourceMap: true
 
-@import "vars";
-@import "mixins";
+// sourceMap включает показ не css, а less в devtools
+// _ в имени файла указывает на то, что его не нужно компилировать отдельно
+
+@import "_vars";
+@import "_mixins";
 
 html,
 body {
@@ -21,7 +24,7 @@ body {
 }
 
 // Blocks
-@import "blocks/title";
-@import "blocks/button";
-
-// 29:00
+@import "blocks/_title";
+@import "blocks/_button";
+@import "blocks/_post";
+@import "blocks/_grid";

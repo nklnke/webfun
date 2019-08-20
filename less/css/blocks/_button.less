@@ -14,13 +14,13 @@
   color: @white;
   text-decoration: none;
 
-  transition: background 0.2s linear;
+  transition: background 0.15s linear;
 
   span {
     color: @black;
   }
 
-  // $ + $ нужны, когда несколько элементов идут подряд
+  // $ + $ нужны, когда несколько элементов идут друг за другом
   & + & {
     margin-left: 1rem;
   }
@@ -32,7 +32,7 @@
   }
 
   // Амперсанд добавляет к классу родителя
-  // Получится btn--primary
+  // &--primary -> btn--primary
   &--primary {
     background-color: @primary;
 
@@ -42,12 +42,24 @@
     }
   }
 
-  // Миксины
+  // Mixins
+  &--primary {
+    .btn(@primary);
+  }
+
   &--secondary {
     .btn(@secondary);
   }
 
   &--green {
     .btn(@green);
+  }
+
+  &--blue {
+    .btn(#0ee);
+  }
+
+  &--success {
+    .btn(@success);
   }
 }

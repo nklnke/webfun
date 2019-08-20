@@ -1,0 +1,15 @@
+//  main: style.less
+
+.btn(@bg) {
+  background-color: @bg;
+
+  // Условие (если фон слишком светлый, то цвет текста меняется на чёрный)
+  & when(lightness(@bg) > 55) {
+    color: fade(@black, 50%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken(@bg, 10%);
+  }
+}

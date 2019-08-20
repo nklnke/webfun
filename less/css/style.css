@@ -15,8 +15,13 @@ body {
 .title {
   margin: 0;
   font-size: 2.2rem;
-  color: #24b;
+  color: rgba(34, 68, 187, 0.5);
   font-weight: 700;
+}
+@media (max-width: 575px) {
+  .title {
+    font-size: 1.5rem;
+  }
 }
 .btn {
   display: inline-block;
@@ -29,7 +34,7 @@ body {
   font-size: 1rem;
   color: #fff;
   text-decoration: none;
-  transition: background 0.2s linear;
+  transition: background 0.15s linear;
 }
 .btn span {
   color: #000;
@@ -48,8 +53,16 @@ body {
 .btn--primary:focus {
   background-color: #365ada;
 }
+.btn--primary {
+  background-color: #24b;
+}
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: #1a3490;
+}
 .btn--secondary {
   background-color: #fb3;
+  color: rgba(0, 0, 0, 0.5);
 }
 .btn--secondary:hover,
 .btn--secondary:focus {
@@ -62,3 +75,111 @@ body {
 .btn--green:focus {
   background-color: #3c7700;
 }
+.btn--blue {
+  background-color: #0ee;
+}
+.btn--blue:hover,
+.btn--blue:focus {
+  background-color: #00bbbb;
+}
+.btn--success {
+  background-color: #ad7;
+  color: rgba(0, 0, 0, 0.5);
+}
+.btn--success:hover,
+.btn--success:focus {
+  background-color: #91d34e;
+}
+.post {
+  width: 400px;
+  height: 200px;
+  background: url("../img/elle-fanning-cannes.jpg") center no-repeat;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.row {
+  display: flex;
+  font-weight: wrap;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+}
+.col-1 {
+  width: 8.33333333%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-2 {
+  width: 16.66666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-3 {
+  width: 25%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-4 {
+  width: 33.33333333%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-5 {
+  width: 41.66666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-6 {
+  width: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-7 {
+  width: 58.33333333%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-8 {
+  width: 66.66666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-9 {
+  width: 75%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-10 {
+  width: 83.33333333%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-11 {
+  width: 91.66666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+.col-12 {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+}
+/*# sourceMappingURL=./style.css.map */
