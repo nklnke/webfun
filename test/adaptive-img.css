@@ -1,0 +1,7 @@
+/* Не вылезает за пределы родительского блока */
+
+.adaptive__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
