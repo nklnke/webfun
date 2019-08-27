@@ -143,10 +143,10 @@ h6 {
 .btn {
   display: inline-block;
   vertical-align: top;
-  padding: 1.1rem 1.8rem;
+  padding: 1.05em 1.7em;
   min-width: 170px;
   border: 1px solid #6a696b;
-  border-radius: 30px;
+  border-radius: 1.8em;
   background: none;
   cursor: pointer;
   font-family: inherit;
@@ -169,8 +169,21 @@ h6 {
 .btn + .btn {
   margin-left: 1rem;
 }
+.btn--sm {
+  padding: 0.7rem 1.2em;
+  font-size: 0.94rem;
+  font-weight: 700;
+  border-width: 2px;
+}
+.btn--active {
+  background-color: #2b2a2c;
+  color: #fff;
+}
+.btn--active:hover {
+  background-color: #8d8d8e;
+}
 .works {
-  padding: 2.7333rem 0;
+  margin: 2.7333rem 0;
 }
 .works__nav {
   display: flex;
@@ -191,7 +204,7 @@ h6 {
 .portfolio {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -1rem;
+  margin: 0 -1rem 2.8rem;
 }
 .portfolio__col {
   flex-basis: 33.33333%;
@@ -201,12 +214,85 @@ h6 {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.15s linear;
 }
-.work__image {
-  display: block;
-  max-width: 100%;
-  height: auto;
+.work:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
 .work__content {
   padding: 1rem 0.8rem;
+}
+.work__cat {
+  font-size: 0.8rem;
+  color: #2b2a2c;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.work__title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.06rem;
+  color: #2b2a2c;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.about {
+  margin: 8.4rem 0;
+}
+.about__inner {
+  display: flex;
+  max-width: 1087px;
+}
+.about__photo {
+  position: relative;
+  width: 50%;
+}
+.about__photo img {
+  position: relative;
+  z-index: 2;
+}
+.about__photo::before {
+  content: "";
+  width: 413px;
+  height: 413px;
+  background-color: #eee;
+  position: absolute;
+  left: 1rem;
+  bottom: 0;
+  z-index: 1;
+}
+.about__content {
+  width: 50%;
+  padding-left: 3.2rem;
+  margin: 2rem;
+}
+.about__title {
+  font-size: 3rem;
+  color: #2b2a2c;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.about__bigtitle {
+  position: relative;
+  left: -10px;
+  margin-bottom: 1.4rem;
+  font-size: 6.1rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: rgba(43, 42, 44, 0.15);
+}
+.about__text {
+  margin-bottom: 2.8rem;
+  font-size: 0.8rem;
+  line-height: 2;
+  color: #6a696b;
+  font-weight: 300;
+}
+.text-center {
+  text-align: center;
+}
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

@@ -4,11 +4,12 @@
 .btn {
   display: inline-block;
   vertical-align: top;
-  padding: 1.1rem 1.8rem; // 15px 27px
+  // Пэддинги в em, чтобы они зависели не от размера шрифта, а от размера кнопки
+  padding: 1.05em 1.7em; // 15px 27px
   min-width: 170px;
 
   border: 1px solid @gray;
-  border-radius: 30px;
+  border-radius: 1.8em; // В em, потому что маленьким кнопкам он нужен меньше, большим больше
   background: none;
   cursor: pointer;
 
@@ -36,5 +37,22 @@
   // margin-left для кнопки, если она идёт после другой кнопки .btn
   + .btn {
     margin-left: 1rem; // 15px
+  }
+
+  // Модификаторы
+  &--sm {
+    padding: 0.7rem 1.2em;
+    font-size: 0.94rem;
+    font-weight: 700;
+    border-width: 2px;
+  }
+
+  &--active {
+    background-color: @black;
+    color: @white;
+
+    &:hover {
+      background-color: @lightgray;
+    }
   }
 }

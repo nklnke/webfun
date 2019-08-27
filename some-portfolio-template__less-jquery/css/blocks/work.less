@@ -5,12 +5,11 @@
 
   border-radius: 10px;
   box-shadow: 0 0 4px fade(#000, 25);
-}
+  transition: box-shadow 0.15s linear;
 
-.work__image {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  &:hover {
+    box-shadow: 0 0 25px fade(#000, 25);
+  }
 }
 
 .work__content {
@@ -18,5 +17,17 @@
 }
 
 .work__cat {
-  
+  font-size: 0.8rem;
+  color: @black;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.work__title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.06rem; // 16px
+  color: @black;
+  font-weight: 700;
+  text-transform: uppercase;
 }
