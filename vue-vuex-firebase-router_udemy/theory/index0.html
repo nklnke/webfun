@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2 @mouseover="onHover">{{ title }}: {{ counter }}</h2>
+    <button @click.once="plus(5, 'Plus 5', $event)">+5</button>
+    <button @click="plus(-10, 'Minus 10', $event)">-10</button>
+
+    <hr>
+
+    <a href="http://google.com" target="_blank" @click.prevent>ggl</a>
+    <!-- 
+      .stop - stopProagation()
+      .prevent - preventDefault()
+      .capture
+      .self 
+      .once
+      .passive
+     -->
+
+    <hr>
+
+    <input type="text" @keyup.enter.up="alert" value="type & press enter/up">
+
+    <hr>
+
+    <input type="text" v-model.lazy="inputValue">
+    <h2>{{ inputValue }}</h2>
+
+    <hr>
+
+    <!-- v-if стирает элемент из DOM -->
+    <h1 v-if="isVisible">Visible</h1>
+    <h2 v-else>Not visible</h2>
+
+    <!-- v-show ставит элементу display: none -->
+    <h1 v-show="isVisible">Visible</h1>
+    <h2 v-show="!isVisible">Not visible</h2>
+
+    <div v-if="!isVisible" class="settings"
+      style="position: absolute; right: 0; top: 0; height: 100%; width: 300px; background-color: gray;">
+      <p>settings</p>
+      <p>settings</p>
+      <p>settings</p>
+      <p>settings</p>
+      <p>settings</p>
+    </div>
+
+    <button @click="isVisible = !isVisible">toggle</button>
+
+    <hr>
+
+    <h2 v-if="char === 'a'">a</h2>
+    <h2 v-else-if="char === 'b'">b</h2>
+    <h2 v-else-if="char === 'c'">c</h2>
+    <h2 v-else>no matches</h2>
+
+    <input type="text" v-model="char">
+
+    <hr>
+
+    <template v-if="isVisible">
+      <h2>title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, nihil, corporis consequuntur
+        voluptatum possimus saepe consectetur id porro velit repellat ipsum delectus dolore.
+        Voluptatem recusandae autem corporis nulla saepe aliquam!</p>
+    </template>
+    <template v-else>
+      <h2 style="color: red;">title</h2>
+      <p style="color: red;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, nihil,
+        corporis consequuntur
+        voluptatum possimus saepe consectetur id porro velit repellat ipsum delectus dolore.
+        Voluptatem recusandae autem corporis nulla saepe aliquam!</p>
+    </template>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        title: "Counter",
+        counter: 0,
+        inputValue: "sika",
+        isVisible: true,
+        char: "a"
+      },
+      methods: {
+        plus: function (num, str, event) {
+          this.counter += num
+          this.title = str
+          num === 5 ? event.target.style.color = "blue" : event.target.style.color = "red"
+        },
+        onHover: function (event) {
+          event.target.style.color = "red"
+        },
+        alert: function (event) {
+          alert(event.target.value)
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
