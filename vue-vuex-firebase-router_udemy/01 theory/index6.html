@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    button {
+      padding: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .large {
+      font-size: 50px;
+    }
+
+    .border {
+      border: 5px solid red;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+
+    <button v-bind:class="{'large': fontSize, 'border': border}">{{ title }} 1</button>
+    <button v-bind:class="fontSize ? 'large' : ''">{{ title }} 2</button>
+    <button v-bind:class="[fontSize ? 'large' : '', {'border': border}]">{{ title }} 3</button>
+    <button v-bind:class="getCSS">{{ title }} getCSS</button> <!-- getCSS() для метода -->
+
+    <br>
+
+    <button v-bind:class="getCSS" v-bind:style="styles">bg-color</button>
+
+    <ul>
+      <li>
+        <input type="checkbox" v-model="fontSize">
+        <label for="">fontSize</label>
+      </li>
+      <li>
+        <input type="checkbox" v-model="border">
+        <label for="">border</label>
+      </li>
+      <li>
+        <input type="text" v-model="bgColor">
+        <label for="">bg-color</label>
+      </li>
+      <li>
+        <input type="range" v-model="range">
+        <label for="">range</label>
+      </li>
+    </ul>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    let vue = new Vue({
+      data: {
+        title: "btn",
+        fontSize: false,
+        border: false,
+        bgColor: "green",
+        range: 5
+      },
+      computed: { // через methods тоже работает, но они замедляют приложение, т.к. вызываются часто
+        getCSS() {
+          return {
+            'large': this.fontSize,
+            'border': this.border
+          }
+        },
+        styles() {
+          return {
+            'background': this.bgColor,
+            'margin-left': this.range + 'px'
+          }
+        }
+      }
+    });
+
+    vue.$mount("#app")
+
+  </script>
+</body>
+
+</html>

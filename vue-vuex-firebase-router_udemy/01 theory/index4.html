@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app1">
+    {{ title }}
+    {{ newField }}
+  </div>
+
+  <hr>
+
+  <div id="app2">
+    {{ title }}
+    <button @click="changeTitle1">changeTitle1</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    let vue1 = new Vue({
+      el: "#app1",
+      data: {
+        title: "title1"
+      },
+      methods: {
+        alertTest: function () {
+          alert("sika kaka from app1")
+        }
+      }
+    });
+
+    vue1.newField = "test"
+
+    new Vue({
+      el: "#app2",
+      data: {
+        title: "title2"
+      },
+      methods: {
+        changeTitle1: function () {
+          vue1.title = "sasai"
+          console.log(vue1)
+          vue1.newField = "newField666"
+          setTimeout(function () {
+            vue1.alertTest()
+          }, 500)
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
