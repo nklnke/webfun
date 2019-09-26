@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <form action="">
+      <span>{{ count }} / 30</span>
+      <textarea v-model="textValue"></textarea>
+      <button v-if="count <= 30">send</button>
+    </form>
+
+    <hr>
+
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        textValue: ""
+      },
+      computed: { // методы из computed нужно использовать не как функции, а как переменные
+        count: function () {
+          return this.textValue.length
+        }
+      },
+      methods: {
+
+      },
+      watch: { // отслеживать textValue и при его изменениях выполнять какие-то действия
+        textValue: function() {
+          console.log(this.textValue);
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
