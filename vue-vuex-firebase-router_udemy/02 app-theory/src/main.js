@@ -2,8 +2,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import Directive from "./color.js";
 import ListNames from "./ListNames.vue";
+import VueRouter from "vue-router";
+import router from "./routes";
 
 export const eventEmitter = new Vue();
+
+Vue.use(VueRouter);
 
 Vue.directive("colored", Directive);
 
@@ -22,8 +26,10 @@ Vue.filter("slice", val => {
 
 new Vue({
   el: "#app",
-  render: h => h(App)
+  render: h => h(App),
   // render: function(h) {
   //   return h(App);
   // }
+
+  router: router
 });

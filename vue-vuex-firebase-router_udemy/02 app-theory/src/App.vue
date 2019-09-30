@@ -1,5 +1,20 @@
 <template>
   <div id="app">
+    <nav style="position: fixed; top: 0; right: 0; height: 100%; width: 300px; padding: 30px; font-size: 50px; background-color: #fff">
+      <!-- <h5><router-link to="/">home page</router-link></h5>
+      <h5><router-link to="/huizzas">huizza page</router-link></h5> -->
+
+      <!-- Чтобы активная ссылка выделялась -->
+      <router-link to="/" active-class="active" exact><!-- tag="..." class="..." -->
+      <!-- exact для точного совпадения пути для / -->
+        <a>home page</a>
+      </router-link>
+      <router-link to="/huizzas" active-class="active">
+        <a>huizzas page</a>
+      </router-link>
+    </nav>
+    <router-view></router-view>
+
     <app-huizza
       v-bind:huizzaName="huizzaName"
       v-bind:huizzaPrice="huizzaPrice"
@@ -92,5 +107,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .active {
+    color: green;
+  }
 </style>
