@@ -2,7 +2,7 @@
 
 function update() {
   var date = new Date();
-  console.log(date);
+  console.log(date.toLocaleString());
 }
 
 // Функция start для запуска таймера
