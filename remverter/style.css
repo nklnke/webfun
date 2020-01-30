@@ -1,0 +1,21 @@
+body {
+  font-size: 16px;
+  font-weight: normal; }
+
+table {
+  width: 75%;
+  margin: 10px auto; }
+  table input {
+    margin: 10px 0; }
+  table p {
+    display: inline;
+    margin: 10px 0; }
+
+td {
+  padding: 10px; }
+
+.sm {
+  width: 25%;
+  margin: 10px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -6,15 +6,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <input type="text" value="" placeholder="base" />
-  <input type="text" value="" placeholder="pixels" onkeyup="output(this)" />
-  <p id="output">rem</p>
-
   <table>
-    table
+    <tr>
+      <td>
+        Base:
+        <input id="baseValue" type="text" value="16" placeholder="base" id="base">
+      </td>
+      <td>
+        Pixels:
+        <input id="pxValue" type="text" value="" placeholder="pixels">
+        <p id="output">0rem</p>
+      </td>
+    </tr>
+  </table>
+
+  <table id="pxToRemTable" class="sm">
+    <thead>
+      <tr>
+        <th>px</th>
+        <th>rem</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>8</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
 
   <script src="script.js"></script>
