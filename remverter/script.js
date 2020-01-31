@@ -5,12 +5,9 @@ let inputs = document.getElementsByTagName("input");
 let pixelColumn = document.querySelectorAll("#pxToRemTable td:first-child");
 let remColumn = document.querySelectorAll("#pxToRemTable td:nth-child(2)");
 
-function createEventListeners() {
-  for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener("keyup", convertPxToRem);
-    inputs[i].addEventListener("keyup", createPxToRemTable);
-  }
-  createPxToRemTable();
+for (let i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener("keyup", convertPxToRem);
+  inputs[i].addEventListener("keyup", createPxToRemTable);
 }
 
 function convertPxToRem() {
@@ -29,4 +26,4 @@ function createPxToRemTable(n) {
   }
 }
 
-createEventListeners();
+createPxToRemTable();
